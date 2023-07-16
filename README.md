@@ -1,3 +1,28 @@
+# Features
+
+-> Add a task
+-> Delete a task
+-> Edit a task
+-> Shift tasks from Resources, Todo, Doing, Done
+
+# State
+
+State is managed using Redux to showcase direct changes
+
+# Questions
+
+Ques-1 - If a user can create and edit stages for a particular board. For example instead of Open > In Progress > Done if they want the stages of their task board to be Read > Working > Reviewing > Completed
+
+Ans - It is possible to do, it works the same like editing a task, we can also add a functionality where a user can change the name of the card. Similarly we can create new cards too, like the way we are creating a task.
+
+Ques-2 - If users can comment on tasks
+
+Ans - It is also possible to do so, we only need to maintain user comments in an array, and we can map through that array to show all comments in a modal or somewhere when the show comments button is clicked.
+
+Ques-3 - How will you do error handling?
+
+Ans - Error handling can be managed in redux states or using try-catch block, if there is some error, we can notify the user via a alert or toast.
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).

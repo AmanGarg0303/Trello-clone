@@ -3,7 +3,7 @@
 -> Add a task
 -> Delete a task
 -> Edit a task
--> Shift tasks from Resources, Todo, Doing, Done
+-> Drag and Drop tasks from Resources, Todo, Doing, Done
 
 # State
 

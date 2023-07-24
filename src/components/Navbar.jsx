@@ -5,7 +5,9 @@ const Navbar = ({ changeState }) => {
     <nav className="flex text-white px-10 py-2 mb-2 justify-between">
       <h1 className="font-bold text-3xl">Taco's Tacos</h1>
 
-      <button onClick={changeState}>Switch Board</button>
+      <button className="border px-2 py-1" onClick={changeState}>
+        Switch Board
+      </button>
     </nav>
   );
 };

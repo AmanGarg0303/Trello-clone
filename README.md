@@ -4,6 +4,8 @@
 -> Delete a task
 -> Edit a task
 -> Drag and Drop tasks from Resources, Todo, Doing, Done
+-> Add a card
+-> Switch to new Board
 
 # State
 

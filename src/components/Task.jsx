@@ -39,11 +39,17 @@ const Task = ({
 
         <div className="flex flex-col gap-2">
           <button onClick={() => setOpenModel(true)}>
-            <EditNoteIcon className="text-green-500 hover:text-green-600" />
+            <EditNoteIcon
+              className="text-green-500 hover:text-green-600"
+              titleAccess="Edit Task"
+            />
           </button>
 
           <button onClick={() => handleDeleteTask(taskId)}>
-            <DeleteForeverIcon className="text-red-500 hover:text-red-600" />
+            <DeleteForeverIcon
+              className="text-red-500 hover:text-red-600"
+              titleAccess="Delete Task"
+            />
           </button>
         </div>
       </div>

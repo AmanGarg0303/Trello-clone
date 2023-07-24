@@ -1,11 +1,13 @@
 import React from "react";
 import Card from "./Card";
 import { DragDropContext } from "react-beautiful-dnd";
-import { useSelector, useDispatch } from "react-redux";
+import { useDispatch } from "react-redux";
 import { shiftTask } from "../redux/todoSlice";
+import { useSelector } from "react-redux";
 
-const Cards = () => {
-  const { mainCard } = useSelector((card) => card.todo);
+const Cards = ({ stateToMap }) => {
+  // const { currState } = useSelector((card) => card.todo);
+  // console.log(currState);
 
   const dispatch = useDispatch();
 
@@ -18,13 +20,16 @@ const Cards = () => {
   return (
     <DragDropContext onDragEnd={shiftingTasks}>
       <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-5">
-        {mainCard?.map((todoCard) => {
+        {stateToMap?.map((todoCard) => {
           return (
-            <Card
-              key={todoCard?.id}
-              title={todoCard?.groupName}
-              todoList={todoCard}
-            />
+            <>
+              <Card
+                key={todoCard?.id}
+                title={todoCard?.groupName}
+                todoList={todoCard}
+                groupId={todoCard?.id}
+              />
+            </>
           );
         })}
       </div>

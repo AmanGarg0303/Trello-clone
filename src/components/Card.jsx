@@ -1,8 +1,9 @@
 import React, { useState } from "react";
 import Tasks from "./Tasks";
 import EditNoteIcon from "@mui/icons-material/EditNote";
+import DeleteForeverIcon from "@mui/icons-material/DeleteForever";
 import { useDispatch } from "react-redux";
-import { editCardName } from "../redux/todoSlice";
+import { editCardName, deleteCard } from "../redux/todoSlice";
 
 const Card = ({ title, todoList, groupId }) => {
   const [modal, setModal] = useState(false);
@@ -19,10 +20,18 @@ const Card = ({ title, todoList, groupId }) => {
     <div className="flex flex-col border bg-slate-300  p-2 rounded-md h-fit">
       <div className="flex items-center justify-between">
         <h2 className="font-medium text-xl">{title}</h2>
-        <EditNoteIcon
-          titleAccess="Edit card title"
-          onClick={() => setModal(true)}
-        />
+        <div className="space-x-4">
+          <EditNoteIcon
+            titleAccess="Edit card title"
+            onClick={() => setModal(true)}
+            className="text-green-500 cursor-pointer"
+          />
+          <DeleteForeverIcon
+            onClick={() => dispatch(deleteCard({ cardId: groupId }))}
+            className="text-red-500 cursor-pointer"
+            titleAccess="Delete Card"
+          />
+        </div>
       </div>
 
       {modal && (

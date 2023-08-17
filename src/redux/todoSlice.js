@@ -95,6 +95,18 @@ export const userSlice = createSlice({
 
       // state.mainCard = JSON.parse(JSON.stringify(items));
     },
+
+    deleteCard: (state, action) => {
+      const items =
+        state?.currState === "mainCard" ? state.mainCard : state.newBoard;
+      console.log(items);
+
+      items.splice(
+        items.findIndex((item) => item.id === action.payload.cardId),
+        1
+      );
+    },
+
     editTask: (state, action) => {
       const items = Array.from(
         state?.currState === "mainCard" ? state.mainCard : state.newBoard
@@ -158,6 +170,7 @@ export const {
   editCardName,
   newBoardDispatch,
   addCard,
+  deleteCard,
 } = userSlice.actions;
 
 export default userSlice.reducer;
